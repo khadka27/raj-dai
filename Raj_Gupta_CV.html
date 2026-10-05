@@ -2,110 +2,298 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Raj Gupta — Curriculum Vitae</title>
 <style>
-  @page { size: A4; margin: 20mm 18mm; }
+  @page {
+    size: A4;
+    margin: 14mm 16mm;
+  }
+  * {
+    box-sizing: border-box;
+  }
   body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #1e293b;
-    line-height: 1.5;
+    line-height: 1.45;
     margin: 0;
-    padding: 0;
-    font-size: 11pt;
+    padding: 24px;
+    font-size: 10pt;
+    background: #ffffff;
+    max-width: 860px;
+    margin: 0 auto;
   }
   .header {
+    text-align: center;
     border-bottom: 2px solid #0284c7;
-    padding-bottom: 12px;
-    margin-bottom: 20px;
+    padding-bottom: 14px;
+    margin-bottom: 16px;
   }
-  h1 { margin: 0; font-size: 26pt; color: #0c2340; letter-spacing: -0.5px; }
-  .tagline { font-size: 13pt; color: #0284c7; font-weight: 600; margin: 4px 0 10px; }
-  .contacts { font-size: 9.5pt; color: #64748b; }
-  .contacts a { color: inherit; text-decoration: none; }
-  .section { margin-bottom: 18px; }
+  h1 {
+    margin: 0 0 6px 0;
+    font-size: 24pt;
+    font-weight: 800;
+    color: #0c2340;
+    letter-spacing: -0.5px;
+  }
+  .contacts {
+    font-size: 9.5pt;
+    color: #475569;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .contacts a {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .contacts a:hover {
+    text-decoration: underline;
+  }
+  .section {
+    margin-bottom: 16px;
+  }
   h2 {
-    font-size: 12.5pt;
+    font-size: 12pt;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     color: #0c2340;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1.5px solid #cbd5e1;
     padding-bottom: 4px;
-    margin: 0 0 10px;
+    margin: 0 0 10px 0;
   }
-  .exp-item { margin-bottom: 12px; }
-  .exp-head { display: flex; justify-content: space-between; font-weight: 700; color: #0f172a; }
-  .exp-sub { font-size: 10pt; color: #0284c7; margin-bottom: 4px; }
-  p { margin: 0 0 6px; font-size: 10pt; color: #334155; }
-  ul { margin: 4px 0 8px 18px; padding: 0; font-size: 10pt; color: #334155; }
-  li { margin-bottom: 3px; }
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .chip { display: inline-block; background: #f1f5f9; padding: 3px 8px; border-radius: 4px; font-size: 9pt; margin: 2px 2px; }
+  .job-block {
+    margin-bottom: 14px;
+  }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 3px;
+  }
+  .job-role {
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: #0f172a;
+  }
+  .job-company {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 5px;
+  }
+  p {
+    margin: 0 0 6px 0;
+    font-size: 9.8pt;
+    color: #334155;
+    line-height: 1.5;
+  }
+  ul {
+    margin: 4px 0 8px 18px;
+    padding: 0;
+    font-size: 9.5pt;
+    color: #334155;
+  }
+  li {
+    margin-bottom: 3.5px;
+    line-height: 1.42;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+    margin-top: 6px;
+  }
+  .skill-item {
+    font-size: 9.5pt;
+    color: #334155;
+    position: relative;
+    padding-left: 14px;
+  }
+  .skill-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #0284c7;
+    font-weight: bold;
+  }
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .edu-item {
+    margin-bottom: 4px;
+  }
+  .edu-school {
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: #0c2340;
+    text-transform: uppercase;
+  }
+  .edu-degree {
+    font-size: 10pt;
+    color: #0284c7;
+    font-weight: 600;
+  }
+  .cert-list {
+    margin-top: 6px;
+  }
+  .cert-item {
+    margin-bottom: 6px;
+    font-size: 9.5pt;
+  }
+  .cert-name {
+    font-weight: 700;
+    color: #0284c7;
+  }
+  .cert-issuer {
+    color: #475569;
+  }
+  @media print {
+    body {
+      padding: 0;
+      font-size: 9.5pt;
+    }
+    .header {
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+    }
+    .section {
+      margin-bottom: 12px;
+    }
+  }
 </style>
 </head>
 <body>
-  <div class="header">
+
+  <header class="header">
     <h1>Raj Gupta</h1>
-    <div class="tagline">Content Creator &bull; Social Media Manager &bull; Digital Marketing Specialist</div>
     <div class="contacts">
-      London, United Kingdom &bull; rajgupta.creatives@gmail.com &bull; linkedin.com/in/rajgupta &bull; portfolio.dev
+      <span><a href="mailto:rajg45681@gmail.com">rajg45681@gmail.com</a></span>
+      <span>&bull;</span>
+      <span><a href="tel:07472062257">07472062257</a></span>
+      <span>&bull;</span>
+      <span><a href="https://www.linkedin.com/in/raj-gupta-3b88102b3/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></span>
     </div>
-  </div>
+  </header>
 
-  <div class="section">
-    <h2>Professional Summary</h2>
+  <section class="section">
+    <h2>Personal Profile</h2>
     <p>
-      Results-driven Content Creator and Social Media Specialist pursuing an MSc in Digital Marketing at the University of West London. Combines software engineering foundations with multi-platform content fluency across TikTok, Instagram, Facebook, and LinkedIn. Proven track record of boosting student engagement by 250% and executing paid acquisition campaigns with 3.5x ROAS.
+      A creative and digitally savvy individual with a strong command of major social media platforms including Instagram, Facebook, TikTok, LinkedIn, YouTube, and X. Experienced in crafting engaging content across formats: text, image, and video paired with skills in graphic design, and video editing. Proficient in content planning, social media analytics, and running targeted paid ad campaigns with A/B testing. Passionate about digital marketing, community engagement, and using AI tools like ChatGPT to enhance content strategy and execution.
     </p>
-  </div>
+  </section>
 
-  <div class="section">
-    <h2>Education &amp; Credentials</h2>
-    <div class="exp-item">
-      <div class="exp-head"><span>MSc Digital Marketing</span><span>2024 &ndash; Present</span></div>
-      <div class="exp-sub">University of West London, UK</div>
-      <p>Specialization in consumer psychology, brand architecture, attribution modeling, and data-informed content strategies.</p>
-    </div>
-    <div class="exp-item">
-      <div class="exp-head"><span>B.Eng. Computer Systems Engineering</span><span>2019 &ndash; 2023</span></div>
-      <div class="exp-sub">ISMT College</div>
-      <p>Systems architecture, software development, data structures, relational databases, and computational logic.</p>
-    </div>
-    <div class="exp-item">
-      <div class="exp-head"><span>Certifications</span><span>2024</span></div>
-      <p>&bull; <strong>HubSpot Academy:</strong> Digital Marketing Certification (Inbound, SEO, Content Lifecycle)<br>
-      &bull; <strong>Google:</strong> Google Analytics 4 (GA4) Certification (Custom Events, Attribution, ROI Analytics)</p>
-    </div>
-  </div>
+  <section class="section">
+    <h2>Professional Experience</h2>
 
-  <div class="section">
-    <h2>Core Strengths &amp; Experience</h2>
-    <div class="exp-item">
-      <div class="exp-head"><span>Content Strategy &amp; Social Growth Lead</span><span>2023 &ndash; 2024</span></div>
-      <div class="exp-sub">Featured Client Campaigns: ISMT College &amp; The Foodiety</div>
+    <!-- ISMT College -->
+    <div class="job-block">
+      <div class="job-head">
+        <span class="job-role">Content Creator</span>
+      </div>
+      <div class="job-company">ISMT COLLEGE</div>
       <ul>
-        <li>Orchestrated viral TikTok growth campaign achieving a 250% lift in engagement and 100K+ reach.</li>
-        <li>Spearheaded multi-channel content calendar driving 180% engagement acceleration across Instagram and Facebook.</li>
-        <li>Managed paid Meta Ad campaigns with multi-variant A/B creative testing, reducing CPA by 34%.</li>
+        <li>Produced high-quality photo and video content showcasing campus life, events, and student experiences, contributing to a 30–35% increase in overall social media engagement across TikTok and Facebook.</li>
+        <li>Captured and edited 4–5 videos per week, alongside regular photography, maintaining a consistent stream of engaging visual content.</li>
+        <li>Designed 2–3 social media posts per week using Canva and Adobe Photoshop, ensuring strong brand consistency and visual appeal.</li>
+        <li>Created short-form video content tailored to high school and college students, achieving average 5K–10K views per video and improving audience interaction.</li>
+        <li>Developed and executed content strategies focused on Gen Z audiences, leveraging trends, hashtags, and platform features to increase reach and visibility.</li>
+        <li>Managed the full content lifecycle from ideation and scripting to daily editing and publishing ensuring a consistent posting schedule and high-quality output.</li>
+        <li>Monitored performance using Meta Business Suite and platform insights, applying data-driven improvements that boosted engagement rates by 25%+.</li>
+        <li>Collaborated with marketing and design teams to maintain a cohesive brand voice and support wider promotional campaigns.</li>
+        <li>Planned and scheduled content using tools like Google Calendar, strengthening consistency and audience retention.</li>
+        <li>Applied storytelling and audience-focused messaging to create relatable, shareable content that enhanced brand awareness among student audiences.</li>
       </ul>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>Tools &amp; Technical Capabilities</h2>
-    <div>
-      <span class="chip">Adobe Premiere Pro</span>
-      <span class="chip">CapCut</span>
-      <span class="chip">Adobe Photoshop</span>
-      <span class="chip">Canva</span>
-      <span class="chip">Meta Business Suite</span>
-      <span class="chip">Facebook Ads Manager</span>
-      <span class="chip">Google Analytics 4</span>
-      <span class="chip">TikTok Ads Manager</span>
-      <span class="chip">ChatGPT / Generative AI</span>
-      <span class="chip">A/B Testing</span>
-      <span class="chip">Copywriting</span>
-      <span class="chip">HTML/CSS</span>
+    <!-- The Foodiety -->
+    <div class="job-block">
+      <div class="job-head">
+        <span class="job-role">Content Creator</span>
+      </div>
+      <div class="job-company">The Foodiety</div>
+      <ul>
+        <li>Created engaging promotional video content for restaurants and cafés, showcasing food, ambiance, and customer experience.</li>
+        <li>Captured high-quality food photography, highlighting presentation and visual appeal for use in social media marketing.</li>
+        <li>Managed and grew social media platforms (TikTok and Instagram) through consistent, trend-driven content.</li>
+        <li>Collaborated with restaurant owners to develop tailored content strategies aligned with their brand identity.</li>
+        <li>Handled end-to-end content production, including planning, shooting, editing, and publishing videos and photos to maximize reach and engagement.</li>
+      </ul>
     </div>
-  </div>
+
+    <!-- ANIME POKHARA -->
+    <div class="job-block">
+      <div class="job-head">
+        <span class="job-role">Social Media Manager</span>
+      </div>
+      <div class="job-company">ANIME POKHARA</div>
+      <ul>
+        <li>Grew Instagram from 5,000 to 7,400 and TikTok from 2,600 to 36,000, significantly increasing brand visibility and online presence.</li>
+        <li>Managed end-to-end content creation, including filming, editing, and publishing, ensuring a consistent and high-quality posting schedule.</li>
+        <li>Ran and optimised Meta (Facebook &amp; Instagram) ad campaigns, improving reach, engagement, and conversion rates.</li>
+        <li>Monitored and analysed performance metrics, using insights to refine content strategy and maximise engagement.</li>
+        <li>Managed daily social media operations, including content planning, posting, and audience interaction, building a loyal and engaged community.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item">Social Media Platform Expertise (Facebook, Instagram, TikTok, LinkedIn, YouTube, X/Twitter)</div>
+      <div class="skill-item">Social Media Analytics and Insights (Meta Business Suite, Instagram Insights, Google Analytics)</div>
+      <div class="skill-item">Content Creation (text, image, video)</div>
+      <div class="skill-item">Paid Advertising (Facebook &amp; Instagram Ads)</div>
+      <div class="skill-item">Copywriting and Caption Writing</div>
+      <div class="skill-item">Audience Targeting and A/B Testing</div>
+      <div class="skill-item">Graphic Design (Canva, Adobe Photoshop)</div>
+      <div class="skill-item">Digital Marketing Knowledge (email marketing, content marketing)</div>
+      <div class="skill-item">Video Editing (CapCut, Adobe Premiere Pro)</div>
+      <div class="skill-item">Basic Knowledge of AI Tools for Content Creation</div>
+      <div class="skill-item">Content Planning and Calendar Management</div>
+      <div class="skill-item">UI/UX Design</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Education</h2>
+    <div class="edu-grid">
+      <div class="edu-item">
+        <div class="edu-school">UNIVERSITY OF WEST LONDON</div>
+        <div class="edu-degree">MSc Digital Marketing</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-school">ISMT COLLEGE</div>
+        <div class="edu-degree">Bachelor in Computer Systems Engineering</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-school">PRATIVA SECONDARY SCHOOL</div>
+        <div class="edu-degree">High School</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Certifications</h2>
+    <div class="cert-list">
+      <div class="cert-item">
+        <div class="cert-name"><a href="https://app.hubspot.com" target="_blank" rel="noopener noreferrer">Digital Marketing</a></div>
+        <div class="cert-issuer">HubSpot Academy</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-name"><a href="https://analytics.google.com" target="_blank" rel="noopener noreferrer">Google Analytics</a></div>
+        <div class="cert-issuer">Google</div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>

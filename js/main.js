@@ -181,7 +181,7 @@ import { projects } from './data.js';
   $$('.education-items-grid .edu-card').forEach((el, i) => {
     el.style.setProperty('--card-delay', `${(i * 0.12).toFixed(2)}s`);
   });
-  $$('.experience-grid .exp-card').forEach((el, i) => {
+  $$('.experience-grid .exp-card, .exp-timeline-grid .exp-pro-card').forEach((el, i) => {
     el.style.setProperty('--card-delay', `${(i * 0.09).toFixed(2)}s`);
   });
   $$('.work-grid .work-card').forEach((el, i) => {
@@ -201,7 +201,7 @@ import { projects } from './data.js';
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  $$('.reveal, .edu-card, .exp-card, .work-card, .service, .about-content-wrap, .education-wrap, .experience-wrap, .skill-card').forEach(el => {
+  $$('.reveal, .edu-card, .exp-card, .exp-pro-card, .work-card, .service, .about-content-wrap, .education-wrap, .experience-wrap, .skill-card').forEach(el => {
     revealIO.observe(el);
   });
 
@@ -472,6 +472,21 @@ import { projects } from './data.js';
           isDownloading = false;
         }, 2200);
       }, 1200);
+    });
+  }
+
+  /* ---------- Experience details toggle ---------- */
+  const toggleIsmt = $('#toggleIsmtBullets');
+  const ismtBullets = $('#ismtMoreBullets');
+  if (toggleIsmt && ismtBullets) {
+    toggleIsmt.addEventListener('click', () => {
+      const isOpen = ismtBullets.classList.toggle('is-open');
+      toggleIsmt.classList.toggle('is-active', isOpen);
+      toggleIsmt.setAttribute('aria-expanded', String(isOpen));
+      const text = toggleIsmt.querySelector('.toggle-text');
+      if (text) {
+        text.textContent = isOpen ? 'Show fewer achievements' : 'View 3 more achievements';
+      }
     });
   }
 
